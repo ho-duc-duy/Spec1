@@ -1,14 +1,14 @@
 // projects.js - p5.js sketches for the projects page
 
 /**
- * This is a sketch generator. It takes an ID and returns a p5 sketch function.
- * This allows us to create multiple, slightly different sketches from the same template.
+ * Sketch generator. It takes an ID and returns a p5 sketch function.
+ * Create multiple, slightly different sketches from the same template.
  * @param {number} id - An identifier for the sketch (e.g., 1, 2, 3, 4)
  */
 const artworkSketch = (id) => {
     return (p) => {
         let angle = 0;
-        // Assign a unique background color based on the ID
+        // Assign background color
         const bgColor = [(id * 60) % 255, 100, 150];
 
         p.setup = function() {
@@ -19,7 +19,7 @@ const artworkSketch = (id) => {
         p.draw = function() {
             p.background(bgColor[0], bgColor[1], bgColor[2]);
             
-            // Placeholder animation: A simple rotating rectangle
+            // Placeholder projects
             p.translate(p.width / 2, p.height / 2);
             p.rotate(angle);
             
@@ -36,4 +36,5 @@ const artworkSketch = (id) => {
 new p5(artworkSketch(1), 'project-canvas-1');
 new p5(artworkSketch(2), 'project-canvas-2');
 new p5(artworkSketch(3), 'project-canvas-3');
+
 new p5(artworkSketch(4), 'project-canvas-4');
