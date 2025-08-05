@@ -1,11 +1,9 @@
-// home.js - p5.js sketch for the homepage soundwave
-
 let bars = [];
 const numBars = 19;
-let popFactor = 0; // For click effect
+let popFactor = 0; // Click effect
 let isHovering = false;
 
-// Color Palettes (HSB format: Hue, Saturation, Brightness)
+// Color Palettes
 const defaultColor = { h: 250, s: 50, b: 100 };
 const hoverColor = { h: 270, s: 80, b: 100 };
 
@@ -18,7 +16,7 @@ function setup() {
 }
 
 function draw() {
-    background('#2b2b2b'); // Match CSS background
+    background('#2b2b2b');
 
     // Check for hover state
     isHovering = (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height);
@@ -85,4 +83,5 @@ function mousePressed() {
 function windowResized() {
     let container = document.getElementById('canvas-container');
     resizeCanvas(container.offsetWidth, 500);
+
 }
