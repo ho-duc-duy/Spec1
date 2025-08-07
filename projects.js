@@ -1,40 +1,34 @@
-// projects.js - p5.js sketches for the projects page
-
 /**
- * Sketch generator. It takes an ID and returns a p5 sketch function.
- * Create multiple, slightly different sketches from the same template.
- * @param {number} id - An identifier for the sketch (e.g., 1, 2, 3, 4)
+ * A placeholder sketch. This is where you will paste your own artwork code.
+ * Remember to adapt it to instance mode by adding 'p.' before every p5.js function!
+ * @param {p5} p - The p5 instance.
  */
-const artworkSketch = (id) => {
-    return (p) => {
-        let angle = 0;
-        // Assign background color
-        const bgColor = [(id * 60) % 255, 100, 150];
+const placeholderSketch = (p) => {
+    p.setup = function() {
+        // Find the parent container and create the canvas to fit its dimensions
+        const container = p.canvas.parentElement;
+        p.createCanvas(container.offsetWidth, container.offsetHeight);
+    };
 
-        p.setup = function() {
-            p.createCanvas(1920, 1080);
-            p.noStroke();
-        };
-
-        p.draw = function() {
-            p.background(bgColor[0], bgColor[1], bgColor[2]);
-            
-            // Placeholder projects
-            p.translate(p.width / 2, p.height / 2);
-            p.rotate(angle);
-            
-            p.fill(255, 255, 255, 150);
-            p.rectMode(p.CENTER);
-            p.rect(0, 0, 400, 400);
-            
-            angle += 0.01;
-        };
+    p.draw = function() {
+        // Simple placeholder visual
+        p.background(51); // Matches the CSS placeholder color
+        p.noStroke();
+        p.fill(80);
+        p.textAlign(p.CENTER, p.CENTER);
+        p.textSize(24);
+        p.text('p5.js Artwork Placeholder', p.width / 2, p.height / 2);
+    };
+    
+    // Make the canvas responsive
+    p.windowResized = function() {
+        const container = p.canvas.parentElement;
+        p.resizeCanvas(container.offsetWidth, container.offsetHeight);
     };
 };
 
-// Create an instance of the sketch for each project canvas container
-new p5(artworkSketch(1), 'project-canvas-1');
-new p5(artworkSketch(2), 'project-canvas-2');
-new p5(artworkSketch(3), 'project-canvas-3');
-
-new p5(artworkSketch(4), 'project-canvas-4');
+// Create an instance of the placeholder sketch for each canvas container
+new p5(placeholderSketch, 'project-canvas-1');
+new p5(placeholderSketch, 'project-canvas-2');
+new p5(placeholderSketch, 'project-canvas-3');
+new p5(placeholderSketch, 'project-canvas-4');
