@@ -12,37 +12,75 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
                 <li><a href="projects.html" class="active">Projects</a></li>
                 <li><a href="credit.html">Credit</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="projects-main">
-        <h1>Our Projects</h1>
-        
-        <div class="project-artwork">
-            <h2>Artwork 1</h2>
-            <div id="project-canvas-1"></div>
-        </div>
-        
-        <div class="project-artwork">
-            <h2>Artwork 2</h2>
-            <div id="project-canvas-2"></div>
-        </div>
+    <main class="projects-page">
+        <!-- New Grid-based Intro Section -->
+        <section class="project-intro-grid">
+            
+            <div class="intro-block block-dots-top-left">
+                <span class="decorator-dots">●●</span>
+            </div>
+            
+            <div class="intro-block block-dots-top-right">
+                <span class="decorator-dots">●●●</span>
+            </div>
 
-        <div class="project-artwork">
-            <h2>Artwork 3</h2>
-            <div id="project-canvas-3"></div>
-        </div>
+            <div class="intro-block block-title">
+                <h1>Life<br>Below<br>Water</h1>
+            </div>
 
-        <div class="project-artwork">
-            <h2>Artwork 4</h2>
-            <div id="project-canvas-4"></div>
-        </div>
+            <div class="intro-block block-subtitle">
+                <h4>CONSERVE AND SUSTAINABLY USE THE OCEANS, SEAS AND MARINE RESOURCES FOR SUSTAINABLE DEVELOPMENT</h4>
+            </div>
 
+            <div class="intro-block block-text-1">
+                <p>"Although the sound is inaudible above water, depending on where you are or the time of year, the underwater soundscape can be as noisy as any jungle or any forest" - Kate Stafford</p>
+                <span class="decorator-dots-grid">⁙</span>
+            </div>
+
+            <div class="intro-block block-text-2">
+                <p>Don't let the ocean's song be silenced by human noise. Don't let the real sound of the ocean be drowned out, bring back its natural song.</p>
+            </div>
+
+            <div class="intro-block block-text-3">
+                <p>The ocean is full of natural sounds — from whales singing to waves crashing — that reflect its health and life. But the hum of human greed is drowning it out, and if we don't act, we might silence the ocean forever.</p>
+                <span class="decorator-dots-grid">⁙</span>
+            </div>
+
+        </section>
+
+        <!-- The artwork gallery remains the same -->
+        <section class="artwork-gallery">
+            <div class="artwork-container">
+                <div id="project-canvas-1" class="canvas-placeholder"></div>
+                <p class="artwork-label">Artwork 1</p>
+            </div>
+            <div class="artwork-container">
+                <div id="project-canvas-2" class="canvas-placeholder"></div>
+                <p class="artwork-label">Artwork 2</p>
+            </div>
+            <div class="artwork-container">
+                <div id="project-canvas-3" class="canvas-placeholder"></div>
+                <p class="artwork-label">Artwork 3</p>
+            </div>
+            <div class="artwork-container">
+                <div id="project-canvas-4" class="canvas-placeholder"></div>
+                <p class="artwork-label">Artwork 4</p>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>This project explores the theme of 'Life Below Water', aiming to raise awareness for the UN's Sustainable Development Goal 14 through interactive digital art.</p>
+            <p class="copyright">&copy; 2024 Your Group Name. All Rights Reserved.</p>
+        </div>
+    </footer>
 
     <!-- p5.js Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
