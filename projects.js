@@ -1,8 +1,7 @@
-/**
- * A placeholder sketch. This is where you will paste your own artwork code.
- * Remember to adapt it to instance mode by adding 'p.' before every p5.js function!
- * @param {p5} p - The p5 instance.
- */
+//A placeholder sketch. This is where you will paste your own artwork code.
+//Remember to adapt it to instance mode by adding 'p.' before every p5.js function!
+//@param {p5} p - The p5 instance.
+ 
 const placeholderSketch = (p) => {
     p.setup = function() {
         // Find the parent container and create the canvas to fit its dimensions
