@@ -1,29 +1,29 @@
 body {
-    background-color: #2b2b2b;
+    background-color: #212121;
     color: #f0f0f0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
+main {
+    padding: 40px 8%;
+    min-height: calc(100vh - 160px); /* Adjust based on header/footer height */
+}
+
+/* Header and Navigation */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
-    background-color: rgba(33, 33, 33, 0.8);
-    backdrop-filter: blur(5px);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    padding: 20px 8%;
+    background-color: #2b2b2b;
 }
 
 .logo {
+    margin-top: 10px;
     height: 40px;
     width: auto;
-    /* In case you use text instead of an image */
-    font-size: 1.5rem;
-    font-weight: bold;
 }
 
 nav ul {
@@ -34,75 +34,185 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    margin-left: 30px;
+    margin-left: 40px;
 }
 
 nav a {
     color: #f0f0f0;
     text-decoration: none;
     font-size: 1rem;
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
-nav a:hover,
-nav a.active {
-    color: #a993ff; /* A nice purple accent */
+nav a:hover, nav a.active {
+    color: #a993ff;
 }
 
-main {
-    padding: 20px 5%;
-}
-
+/* Homepage Styles */
 .home-main {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 80px); /* Full viewport height minus header */
-    padding: 0;
+    padding: 0; /* Override main padding */
 }
 
 #canvas-container {
     width: 90%;
     max-width: 1200px;
+}
+
+/* --- NEW PROJECTS PAGE STYLES --- */
+.projects-page {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Grid container for the entire intro section */
+.project-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px 40px; /* Row gap and Column gap */
+    margin-bottom: 100px;
+    align-items: start;
+}
+
+.intro-block {
+    position: relative;
+    padding-bottom: 20px; /* Space for the grid dots */
+}
+
+/* Placing each block in the grid */
+.block-dots-top-left { grid-area: 1 / 1; }
+.block-dots-top-right { grid-area: 1 / 2; }
+.block-title { grid-area: 2 / 1; }
+.block-subtitle { grid-area: 2 / 2; }
+.block-text-1 { grid-area: 3 / 1; margin-top: 20px; }
+.block-text-2 { grid-area: 4 / 2; margin-top: 20px; }
+.block-text-3 { grid-area: 5 / 1; margin-top: 20px; }
+
+/* Styling the content within the blocks */
+.block-title h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.block-subtitle h4 {
+    font-size: 1.1rem;
+    margin: 0 0 10px 0;
+    letter-spacing: 1px;
+    color: #f0f0f0;
+    font-weight: 700;
+}
+
+.intro-block p {
+    margin: 0;
+    line-height: 1.7;
+    color: #bbb;
+    max-width: 90%; /* prevent text from hitting the edge */
+}
+
+/* Styling the decorative dots */
+.decorator-dots {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: bold;
+}
+.block-dots-top-right { text-align: right; }
+
+.decorator-dots-grid {
+    position: absolute;
+    bottom: 0;
+    right: 10%; /* Position it away from the edge */
+    font-size: 2rem;
+    color: #fff;
+}
+/* --- END OF NEW PROJECTS PAGE STYLES --- */
+
+
+.artwork-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+}
+
+.artwork-container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.canvas-placeholder {
+    width: 100%;
+    height: 600px; /* Placeholder height */
+    background-color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 8px;
 }
 
-.content-page {
-    max-width: 800px;
-    margin: 40px auto;
-    line-height: 1.7;
+.artwork-label {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: #ccc;
 }
 
-.content-page h1 {
-    color: #a993ff;
-    border-bottom: 2px solid #a993ff;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+.canvas-placeholder canvas {
+    max-width: 100%;
+    height: auto !important;
+    border-radius: 8px;
 }
 
-.projects-main {
-    max-width: 1200px;
+/* Credit Page Styles */
+.credit-page {
+    max-width: 900px;
     margin: 0 auto;
     text-align: center;
 }
 
-.project-artwork {
+.credit-page h1 {
+    font-size: 3rem;
     margin-bottom: 60px;
-    background-color: #2c2c2c;
-    border-radius: 8px;
-    padding: 20px;
 }
 
-.project-artwork h2 {
-    margin-top: 0;
-    color: #a993ff;
+.authors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
 }
 
-.project-artwork canvas {
-    max-width: 100%;
-    height: auto !important; /* Override p5.js inline style */
+.author-card img {
+    width: 180px;
+    height: 180px;
+    background-color: #888;
     border-radius: 4px;
+    margin-bottom: 15px;
+}
 
+.author-card p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #2b2b2b;
+    padding: 30px 8%;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #aaa;
+}
+
+.footer-content .copyright {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #777;
 }
