@@ -1,6 +1,6 @@
-//A placeholder sketch. This is where you will paste your own artwork code.
-//Remember to adapt it to instance mode by adding 'p.' before every p5.js function!
-//@param {p5} p - The p5 instance.
+//Placeholder sketches.
+//Remember to adapt it to instance mode by adding 'p.' before every p5.js function.
+//p - Using the p5js instance mode instead of global mode
  
 const placeholderSketch = (p) => {
     p.setup = function() {
@@ -31,3 +31,4 @@ new p5(placeholderSketch, 'project-canvas-1');
 new p5(placeholderSketch, 'project-canvas-2');
 new p5(placeholderSketch, 'project-canvas-3');
 new p5(placeholderSketch, 'project-canvas-4');
+
