@@ -1,90 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <a href="index.html"><img src="logo.png" alt="Logo" class="logo"></a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
-                <li><a href="credit.html">Credit</a></li>
-            </ul>
-        </nav>
-    </header>
+/**
+ * A placeholder sketch. This is where you will paste your own artwork code.
+ * Remember to adapt it to instance mode by adding 'p.' before every p5.js function!
+ * @param {p5} p - The p5 instance.
+ */
+const placeholderSketch = (p) => {
+    p.setup = function() {
+        // Find the parent container and create the canvas to fit its dimensions
+        const container = p.canvas.parentElement;
+        p.createCanvas(container.offsetWidth, container.offsetHeight);
+    };
 
-    <main class="projects-page">
-        <!-- New Grid-based Intro Section -->
-        <section class="project-intro-grid">
-            
-            <div class="intro-block block-dots-top-left">
-                <span class="decorator-dots">●●</span>
-            </div>
-            
-            <div class="intro-block block-dots-top-right">
-                <span class="decorator-dots">●●●</span>
-            </div>
+    p.draw = function() {
+        // Simple placeholder visual
+        p.background(51); // Matches the CSS placeholder color
+        p.noStroke();
+        p.fill(80);
+        p.textAlign(p.CENTER, p.CENTER);
+        p.textSize(24);
+        p.text('p5.js Artwork Placeholder', p.width / 2, p.height / 2);
+    };
+    
+    // Make the canvas responsive
+    p.windowResized = function() {
+        const container = p.canvas.parentElement;
+        p.resizeCanvas(container.offsetWidth, container.offsetHeight);
+    };
+};
 
-            <div class="intro-block block-title">
-                <h1>Life<br>Below<br>Water</h1>
-            </div>
-
-            <div class="intro-block block-subtitle">
-                <h4>CONSERVE AND SUSTAINABLY USE THE OCEANS, SEAS AND MARINE RESOURCES FOR SUSTAINABLE DEVELOPMENT</h4>
-            </div>
-
-            <div class="intro-block block-text-1">
-                <p>"Although the sound is inaudible above water, depending on where you are or the time of year, the underwater soundscape can be as noisy as any jungle or any forest" - Kate Stafford</p>
-                <span class="decorator-dots-grid">⁙</span>
-            </div>
-
-            <div class="intro-block block-text-2">
-                <p>Don't let the ocean's song be silenced by human noise. Don't let the real sound of the ocean be drowned out, bring back its natural song.</p>
-            </div>
-
-            <div class="intro-block block-text-3">
-                <p>The ocean is full of natural sounds — from whales singing to waves crashing — that reflect its health and life. But the hum of human greed is drowning it out, and if we don't act, we might silence the ocean forever.</p>
-                <span class="decorator-dots-grid">⁙</span>
-            </div>
-
-        </section>
-
-        <!-- The artwork gallery remains the same -->
-        <section class="artwork-gallery">
-            <div class="artwork-container">
-                <div id="project-canvas-1" class="canvas-placeholder"></div>
-                <p class="artwork-label">Artwork 1</p>
-            </div>
-            <div class="artwork-container">
-                <div id="project-canvas-2" class="canvas-placeholder"></div>
-                <p class="artwork-label">Artwork 2</p>
-            </div>
-            <div class="artwork-container">
-                <div id="project-canvas-3" class="canvas-placeholder"></div>
-                <p class="artwork-label">Artwork 3</p>
-            </div>
-            <div class="artwork-container">
-                <div id="project-canvas-4" class="canvas-placeholder"></div>
-                <p class="artwork-label">Artwork 4</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <p>This project explores the theme of 'Life Below Water', aiming to raise awareness for the UN's Sustainable Development Goal 14 through interactive digital art.</p>
-            <p class="copyright">&copy; 2024 Your Group Name. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <!-- p5.js Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
-    <!-- Custom sketch for the projects page -->
-    <script src="projects.js"></script>
-</body>
-</html>
+// Create an instance of the placeholder sketch for each canvas container
+new p5(placeholderSketch, 'project-canvas-1');
+new p5(placeholderSketch, 'project-canvas-2');
+new p5(placeholderSketch, 'project-canvas-3');
+new p5(placeholderSketch, 'project-canvas-4');
