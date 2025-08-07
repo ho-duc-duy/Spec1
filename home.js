@@ -5,19 +5,12 @@ let isHovering = false;
 // The total number of vertical bars in the soundwave.
 const numBars = 19;
 
-// --- COLOR PALETTES ---
 // Storing colors as objects makes it easy to switch between them.
-// We use HSB (Hue, Saturation, Brightness) color mode for easy manipulation.
-
-// The default color scheme for the bars.
+// Use HSB (Hue, Saturation, Brightness) color mode for easy manipulation.
 const defaultColor = { h: 250, s: 50, b: 100 };
-// The purple color scheme used when the user hovers over the canvas.
 const hoverColor = { h: 270, s: 80, b: 100 }; 
 
 
-// --- SETUP FUNCTION ---
-// The setup() function runs once when the program starts. It's used to
-// initialize the environment, like creating the canvas and setting color modes.
 function setup() {
   // Find the HTML element with the id 'canvas-container' in our index.html.
   let container = document.getElementById('canvas-container');
@@ -26,36 +19,28 @@ function setup() {
   // Tell the canvas that the 'canvas-container' div is its parent element.
   canvas.parent('canvas-container');
   
-  // Set the color mode to HSB. This allows us to define colors by their
-  // Hue (0-360), Saturation (0-100), and Brightness (0-100).
   colorMode(HSB, 360, 100, 100, 100);
-  // Disable outlines (strokes) for all shapes by default.
   noStroke();
 }
 
 
-// --- DRAW FUNCTION ---
-// The draw() function runs continuously in a loop (about 60 times per second).
-// This is where all the animation and drawing happens.
 function draw() {
-  // Clear the canvas on each frame with a specific dark grey color.
   background('#212121');
 
-  // Check if the mouse cursor's X and Y coordinates are within the canvas bounds.
+  // Check if the mouse cursor's X and Y coordinates are within the canvas.
   // Update the isHovering variable accordingly.
   isHovering = (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height);
   
   // Create a time variable that increases slowly based on the computer's clock.
-  // This gives us a smooth, continuous value for the animation.
   // The speed is based on a tempo of 4 BPM (Beats Per Minute).
   const time = millis() / 15000;
 
-  // This block makes the 'pop' effect fade away smoothly after a click.
+  // Makes the 'pop' effect fade away smoothly after a click.
   if (popFactor > 0) {
-    // If popFactor is greater than 0, decrease it slightly on each frame.
+  // If popFactor is greater than 0, decrease it slightly on each frame.
     popFactor -= 0.05;
   } else {
-    // Ensure popFactor doesn't go below 0.
+  // Ensure popFactor doesn't go below 0.
     popFactor = 0;
   }
 
